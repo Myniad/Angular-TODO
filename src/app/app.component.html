@@ -1,0 +1,18 @@
+<h1>Angular ToDo lab</h1>
+<p>Must be able to display the todo list and allow for new ones to be added</p>
+<p>Also have buttons that disappear when task is considered completed</p>
+
+<div *ngFor="let a of allToDo; index as i">
+  <hr>
+  <h2>{{ i+1 }}. {{ a. task }}
+    <p *ngIf="a.completed" style="color: red;">Task Complete</p><button *ngIf="!a.completed" (click)="a.completed=true">Click to Complete</button>
+</h2>
+</div>
+<hr>
+
+<p>Enter a new task: </p>
+<input type="text" [(ngModel)]="newToDo.task" />
+<!-- <p>Is the task complete? True or false</p>
+<input type="text" [(ngModel)]="newToDo.completed" /> -->
+<button (click)="AddToDo()">Add Task</button>
+
